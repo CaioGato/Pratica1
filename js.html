@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento dos Chamados</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        select, button {
+            margin-top: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Gerenciamento dos Chamados</h2>
+    <label for="filterStatus">Filtrar por Status:</label>
+    <select id="filterStatus">
+        <option value="">Todos</option>
+        <option value="aberto">Aberto</option>
+        <option value="em andamento">Em andamento</option>
+        <option value="resolvido">Resolvido</option>
+    </select>
+
+    <label for="filterCriticidade">Filtrar por Criticidade:</label>
+    <select id="filterCriticidade">
+        <option value="">Todas</option>
+        <option value="baixa">Baixa</option>
+        <option value="média">Média</option>
+        <option value="alta">Alta</option>
+    </select>
+
+    <button onclick="loadChamados()">Aplicar Filtros</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Criticidade</th>
+                <th>Status</th>
+                <th>Colaborador</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="chamadosTableBody">
+            <!-- Dados carregados dinamicamente -->
+        </tbody>
+    </table>
+</body>
+</html>
